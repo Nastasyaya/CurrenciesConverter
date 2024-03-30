@@ -13,6 +13,8 @@
 		B1B4CF1B2BB7F664008A195F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B4CF192BB7F664008A195F /* Main.storyboard */; };
 		B1B4CF1D2BB7F665008A195F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B4CF1C2BB7F665008A195F /* Assets.xcassets */; };
 		B1B4CF202BB7F665008A195F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B4CF1E2BB7F665008A195F /* LaunchScreen.storyboard */; };
+		B1CBDB022BB7F9BB0023E324 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CBDB012BB7F9BB0023E324 /* NetworkManager.swift */; };
+		B1CBDB052BB802390023E324 /* ExchangeCurrencyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CBDB042BB802390023E324 /* ExchangeCurrencyRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		B1B4CF1C2BB7F665008A195F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1B4CF1F2BB7F665008A195F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1B4CF212BB7F665008A195F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1CBDB012BB7F9BB0023E324 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B1CBDB042BB802390023E324 /* ExchangeCurrencyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCurrencyRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		B1B4CF122BB7F664008A195F /* CurrenciesConverter */ = {
 			isa = PBXGroup;
 			children = (
+				B1CBDB002BB7F9A30023E324 /* NetworkManager */,
 				B1B4CF292BB7F736008A195F /* Resources */,
 				B1B4CF282BB7F727008A195F /* Storyboards */,
 				B1B4CF2A2BB7F749008A195F /* Supports */,
@@ -97,6 +102,23 @@
 				B1B4CF172BB7F664008A195F /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B1CBDB002BB7F9A30023E324 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				B1CBDB032BB8021A0023E324 /* Models */,
+				B1CBDB012BB7F9BB0023E324 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		B1CBDB032BB8021A0023E324 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1CBDB042BB802390023E324 /* ExchangeCurrencyRequest.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +192,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CBDB052BB802390023E324 /* ExchangeCurrencyRequest.swift in Sources */,
+				B1CBDB022BB7F9BB0023E324 /* NetworkManager.swift in Sources */,
 				B1B4CF182BB7F664008A195F /* ViewController.swift in Sources */,
 				B1B4CF142BB7F664008A195F /* AppDelegate.swift in Sources */,
 				B1B4CF162BB7F664008A195F /* SceneDelegate.swift in Sources */,
