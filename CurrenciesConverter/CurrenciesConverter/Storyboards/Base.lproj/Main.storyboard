@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Currency Exchange View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CurrencyExchangeViewController" customModule="CurrenciesConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£ Currency exchange $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXO-ta-8cp">
+                                <rect key="frame" x="76.333333333333329" y="118.00000000000001" width="240.66666666666669" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3Uo-Zd-LsJ">
+                                <rect key="frame" x="46.666666666666657" y="220" width="300" height="407"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDH-21-HQr">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-S9-Yjf">
+                                        <rect key="frame" x="0.0" y="70.333333333333314" width="250" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="0k5-FX-WVL"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="CZK"/>
+                                            <segment title="EUR"/>
+                                            <segment title="USD"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="initialCurrenciesStack:" destination="BYZ-38-t0r" eventType="valueChanged" id="mQT-YK-v5H"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTR-Xt-KNh">
+                                        <rect key="frame" x="0.0" y="151.33333333333331" width="124.66666666666667" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lW8-Y7-BAz">
+                                        <rect key="frame" x="0.0" y="221.66666666666669" width="250" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="HBC-IL-9LO"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="CZK"/>
+                                            <segment title="EUR"/>
+                                            <segment title="USD"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="targetCurrenciesStack:" destination="BYZ-38-t0r" eventType="valueChanged" id="YUu-B9-sLy"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z4N-dF-4Jn">
+                                        <rect key="frame" x="0.0" y="302.66666666666663" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="ffE-ku-7ZP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-XD-6aR">
+                                        <rect key="frame" x="0.0" y="386.66666666666663" width="52" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2om-GQ-4wp"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEf-jd-vho">
+                                <rect key="frame" x="96.666666666666686" y="714" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BXL-fB-Un5"/>
+                                    <constraint firstAttribute="width" constant="200" id="xFC-IK-Ori"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Convert">
+                                    <backgroundConfiguration key="background" cornerRadius="10">
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" red="1" green="0.90848491330000003" blue="0.92688903769999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="convertButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Hi-DE-6hq"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eGd-d6-zPK">
+                                <rect key="frame" x="186" y="726" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kEf-jd-vho" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Kx-eq-qB8"/>
+                            <constraint firstItem="kEf-jd-vho" firstAttribute="leading" secondItem="eGd-d6-zPK" secondAttribute="trailing" constant="-109.33333333333331" id="7z7-vi-ces"/>
+                            <constraint firstItem="nXO-ta-8cp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ESl-cG-OkY"/>
+                            <constraint firstItem="kEf-jd-vho" firstAttribute="top" secondItem="eGd-d6-zPK" secondAttribute="bottom" constant="-32" id="VXf-Kd-osU"/>
+                            <constraint firstItem="3Uo-Zd-LsJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHf-py-fys"/>
+                            <constraint firstItem="3Uo-Zd-LsJ" firstAttribute="top" secondItem="nXO-ta-8cp" secondAttribute="bottom" constant="73.333333333333314" id="cby-5E-uaN"/>
+                            <constraint firstItem="kEf-jd-vho" firstAttribute="top" secondItem="3Uo-Zd-LsJ" secondAttribute="bottom" constant="87" id="hpj-dO-maM"/>
+                            <constraint firstItem="nXO-ta-8cp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="t5M-ip-ipR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="convertButtonLabel" destination="kEf-jd-vho" id="mp7-6A-Vd1"/>
+                        <outlet property="resultLabel" destination="KEV-XD-6aR" id="ch9-2U-bQa"/>
+                        <outlet property="spinnerLabel" destination="eGd-d6-zPK" id="ziB-Um-Ebf"/>
+                        <outlet property="valueTextField" destination="Z4N-dF-4Jn" id="KXT-BH-ZEb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

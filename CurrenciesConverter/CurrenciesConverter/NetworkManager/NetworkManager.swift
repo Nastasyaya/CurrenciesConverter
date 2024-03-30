@@ -25,7 +25,7 @@ class NetworkManager {
 
     private init() {}
 
-    private func exchange(
+    func exchange(
         request: ExchangeCurrencyRequest,
         completion: @escaping (State) -> Void
     ) {
@@ -84,6 +84,7 @@ class NetworkManager {
             "currency-exchange.p.rapidapi.com",
             forHTTPHeaderField: "X-RapidAPI-Host"
         )
+        request.timeoutInterval = 10.0
 
         return request
     }
