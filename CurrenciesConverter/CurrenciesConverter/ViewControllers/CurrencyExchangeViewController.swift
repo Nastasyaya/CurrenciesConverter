@@ -32,7 +32,7 @@ class CurrencyExchangeViewController: UIViewController {
         case 1:
             initialCurrency = .eur
         case 2:
-            initialCurrency = .eur
+            initialCurrency = .usd
         default:
             initialCurrency = .czk
         }
@@ -43,7 +43,7 @@ class CurrencyExchangeViewController: UIViewController {
         case 1:
             targetCurrency = .eur
         case 2:
-            targetCurrency = .eur
+            targetCurrency = .usd
         default:
             targetCurrency = .czk
         }
